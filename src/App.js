@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Form from './components/Form';
+import Result from './components/Result';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default class App extends Component {
+	state = {
+		value: ''
+	};
 
-export default App;
+	handleInput = event => {
+		this.setState({
+      value: event.target.value
+    });
+	};
+	render() {
+		return (
+			<div>
+				<div className="header">Weather App</div>
+        <Form 
+        value={this.state.value}
+        change={this.handleInput} />
+				{/*   <Result /> */}
+			</div>
+		);
+	}
+}
