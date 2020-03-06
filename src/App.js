@@ -24,9 +24,11 @@ export default class App extends Component {
     });
   };
   
-  handleCitySubmit = event => {
-    event.preventDefault()
-    const API = `http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&appid=${apiKey}
+   componentDidUpdate(prevProps, prevState){
+
+ 
+      if(prevState !== this.state.value) {
+        const API = `http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&appid=${apiKey}
     `
   
   fetch(API)
@@ -39,7 +41,7 @@ export default class App extends Component {
   .then(res => res.json())
   .then(data => {
     const time= new Date().toLocaleString()
-      this.setState(state => ({
+      this.setState(prevState => ({
         error: false,
         date: time,
         sunrise: data.sys.sunrise,
@@ -47,7 +49,7 @@ export default class App extends Component {
         temp: data.main.temp,
         pressure: data.main.pressure,
         wind: data.wind.speed,
-        city: state.value,
+        city: prevState.value,
       }))
   })
   .catch(err => {
@@ -58,15 +60,17 @@ export default class App extends Component {
     }))
   })
 }
+   
+      }
   
-	render() {
+
+	  render() {
 		return (
 			<div>
 				<div className="header">Weather App</div>
         <Form 
         value={this.state.value}
-        change={this.handleInput}
-        submit={this.handleCitySubmit} />
+        change={this.handleInput} />
         <Result weather={this.state}
         />
 			

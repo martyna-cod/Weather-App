@@ -9,7 +9,7 @@ export default function Form(props) {
            placeholder="enter city" 
            onChange={props.change}
            />
-          <button className="btn">Search city</button>
+    
       </form>
     )
 }
