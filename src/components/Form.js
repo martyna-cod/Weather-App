@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Form(props) {
     return (
-      <form className="form">
+      <form onSubmit={props.submit} className="form">
           <input className="input"
            type="text" 
            value={props.value}
