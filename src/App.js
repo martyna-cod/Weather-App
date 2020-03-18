@@ -67,6 +67,8 @@ export default class App extends Component {
 	  render() {
 		return (
 			<div>
+        <div className="app-logo">Your Weather
+          </div>
 				<div className="header">Weather App</div>
         <Form 
         value={this.state.value}

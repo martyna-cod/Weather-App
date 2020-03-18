@@ -1,68 +1,79 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: white;
-  box-sizing: border-box;
-  padding: 3rem;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.7), rgba(40, 180, 133, 0.7));
+  background-size: cover;
+  background-position: top;
 }
-.header  {
-  margin-top: 100px;
-  text-align: center;
-  color: black;
-  text-transform: uppercase;
-  /*prevents from shaking animation*/
-  backface-visibility: hidden;
-  margin-bottom: 6rem;
-      display: block;
-      font-size: 4rem;
-      font-weight: 400;
-      letter-spacing: 0,5rem;
-      animation-name: moveInLeft;
-      animation-duration: 3s;
-      animation-timing-function: ease-out; 
-    }
 
+@media (prefers-reduced-motion: no-preference) {
+  .app-logo {
+    color: white;
+    margin-top: 2px;
+    animation-name: logo;
+    animation-duration: 4s;
+
+    
+  }
+}
+.header {
+	margin-top: 100px;
+	text-align: center;
+	color: black;
+	text-transform: uppercase;
+	backface-visibility: hidden;
+	margin-bottom: 6rem;
+	display: block;
+	font-size: 4rem;
+	font-weight: 400;
+	letter-spacing: 0, 5rem;
+	animation-name: moveInLeft;
+	animation-duration: 5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes logo {
+  0%   {color: red;}
+  25%  {color: yellow;}
+  50%  {color: blue;}
+  100% {color: green;}
+}
 
 @keyframes moveInLeft {
-      0% {
-        opacity: 0;
-        transform: translateX(-100px); }
-      80% {
-        transform: translateX(-10px); }
-      100% {
-        opacity: 1;
-        transform: translate(0); } }
+	0% {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+	80% {
+		transform: translateX(-10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 .form {
   text-align: center;
+}
+.input {
+        font-size: 1rem;
 
-}
-.input {  
-  width: 10rem;
-  height: 2rem; 
-  display: block;
-}
-.btn  {
+        color: inherit;
+        padding: 0.5rem 2rem;
+        border-radius: 2px;
+        background-color: rgba(w  hite .5);
+        border: none;
+        border-bottom: 1px solid transparent;
+        width: 20%;
+        height: 1rem;
         display: block;
-        text-transform: uppercase;
-        text-decoration: none;
-        padding: 6px 50px;
-        display: inline-block;
-        border-radius: 70px;
-        transition: all .2s
-    
-    } 
-
-.btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 1rem 2rem rgba($color-black,.2)
-    }
-    
+        transition: all .3s;
+        margin-left: 30rem
+}
